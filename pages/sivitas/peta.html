@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Peta Jalur Evakuasi Kebakaran 3D Gedung Pusat UGM</title>
+  <title>Peta Ruangan 3D Gedung Pusat UGM</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -229,7 +229,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-7">
-              <h1>PETA JALUR EVAKUASI KEBAKARAN 3D GEDUNG PUSAT UNIVERSITAS GADJAH MADA</h1>
+              <h1>PETA RUANGAN 3D GEDUNG PUSAT UNIVERSITAS GADJAH MADA</h1>
             </div>
 
           </div>
@@ -1164,12 +1164,16 @@
 
         if (visibility === 'visible') {
           map.setLayoutProperty(mapClickedLayer, 'visibility', 'none');
-          map.setLayoutProperty(trackClickedLayer, 'visibility', 'none');
+          if (map.getLayer(trackClickedLayer)) {
+            map.setLayoutProperty(trackClickedLayer, 'visibility', 'none');
+          }
           this.className = '';
         } else {
           this.className = 'active';
           map.setLayoutProperty(mapClickedLayer, 'visibility', 'visible');
-          map.setLayoutProperty(trackClickedLayer, 'visibility', 'visible');
+          if (map.getLayer(trackClickedLayer)) {
+            map.setLayoutProperty(trackClickedLayer, 'visibility', 'visible');
+          }
         }
       };
 
@@ -1289,7 +1293,7 @@
           },
           'geometry': {
             'type': 'Point',
-            'coordinates': [110.378492, -7.767227]
+            'coordinates': [110.378568, -7.767119]
           }
         },
         {
@@ -1300,7 +1304,7 @@
           },
           'geometry': {
             'type': 'Point',
-            'coordinates': [110.379056, -7.767416]
+            'coordinates': [110.379009, -7.767264]
           }
         },
         {
