@@ -22,20 +22,30 @@
   }
 
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     color: #fff;
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 15%;
     transform: translateX(-50%);
     white-space: nowrap;
+  }
+
+  .icon {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    height: 100px;
+    width: 100px;
   }
 
   .button {
     display: block;
     position: absolute;
     left: 50%;
-    top: 40%;
+    top: 50%;
     height: 2.5rem;
     padding-top: 1.3rem;
     width: 15rem;
@@ -75,7 +85,6 @@
 
   .split.left {
     left:0;
-    /*background: url('https://image.ibb.co/m56Czw/designer.jpg') center center no-repeat;*/
     background-size: cover;
   }
 
@@ -89,7 +98,6 @@
 
   .split.right {
     right:0;
-    /*background: url('https://image.ibb.co/m3ZbRb/programmer.png') center center no-repeat;*/
     background-size: cover;
   }
 
@@ -122,12 +130,29 @@
     width: var(--hover-width);
   }
 
+  .hover-left .right #focused {
+    display: none;
+  }
+
+  .hover-left .right #unfocused {
+    display: block;
+    text-align: center;
+  }
+
   .hover-right .left {
     width: var(--other-width);
   }
 
   .hover-right .left:before {
     z-index: 2;
+  }
+
+  .hover-right  #focused {
+    display: block;
+  }
+
+  .hover-right #unfocused {
+    display: none;
   }
 
   @media(max-width: 800px) {
@@ -138,18 +163,38 @@
     .button {
       width: 12rem;
     }
+
+    #focused {
+      display: none;
+    }
+
+     #unfocused {
+       display: block;
+       text-align: center;
+       font-size: 25px;
+     }
   }
 
   @media(max-height: 700px) {
     .button {
       top: 70%;
     }
+
+    /* #focused {
+      display: none;
+    }
+
+    #unfocused {
+      display: block;
+      text-align: center;
+      font-size: 25px;
+    } */
   }
 </style>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Peta Jalur Evakuasi Kebakaran 3D Gedung Pusat UGM</title>
+  <title>Peta Ruangan 3D Gedung Pusat UGM</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="dist/img/asset/lambang_ugm_putih.png" type="image/icon type">
@@ -158,10 +203,13 @@
 <div class="container">
   <div class="split left">
     <h1>Tamu</h1>
+    <img class="icon" src="./dist/img/asset/user.png"/>
     <a href="./pages/tamu/peta.html" class="button">Masuk</a>
   </div>
   <div class="split right">
-    <h1>Sivitas Akademika UGM</h1>
+    <h1 id="focused">Sivitas Akademika UGM</h1>
+    <h1 id="unfocused" hidden>Sivitas<br/>Akademika UGM</h1>
+    <img class="icon" src="./dist/img/asset/Lambang_UGM-putih.png"/>
     <a href="./pages/sivitas/login.html" class="button">Masuk</a>
   </div>
 </div>
